@@ -3,7 +3,7 @@ import requests
 
 
 def lambda_handler(event, context):
-    # test codebuild
+    # test codebuild again
     query = []
 
     for q in event['interpretations'][0]['intent']['slots']['subject']['values']:
