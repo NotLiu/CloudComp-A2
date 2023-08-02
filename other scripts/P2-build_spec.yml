@@ -13,4 +13,4 @@ phases:
   build:
     commands:
        - npm run build
-       - aws s3 sync public s3://voiceweb-a2 --delete --acl public-read
+       - aws s3 sync build s3://voiceweb-a2 --delete --acl public-read
