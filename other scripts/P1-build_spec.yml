@@ -1,21 +1,12 @@
 version: 0.2
 
 phases:
-  install:
-    runtime-versions:
-      nodejs: latest
   pre_build:
     commands:
-      - cd assignment-2
       - sudo yum install -y zip
-      - echo update npm...
-      - npm install
   build:
     commands:
-       - npm run build
-       - aws s3 sync public s3://voiceweb-a2 --acl public-read
-       - wait
-       - cd ../lambdafunctions/LF1 
+       - cd lambdafunctions/LF1 
        - zip deploy_pckg.zip lambda_function.py
        - aws lambda update-function-code --function-name LF1-photos --zip-file fileb://deploy_pckg.zip
        - wait
